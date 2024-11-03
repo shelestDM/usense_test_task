@@ -34,3 +34,19 @@ export function CompletedIcon({
         <svg xmlns="http://www.w3.org/2000/svg" width={width || '24'} height={height || "24"} viewBox="0 0 24 24" fill="none" stroke={color || 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
     )
 }
+
+export function PlusIcon({
+    color, width, height
+}: IIconProps) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={width || "24"} height={height || '24'} viewBox="0 0 24 24" fill="none" stroke={color || 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>)
+}
+
+export function CloseIcon({
+    color, width, height
+}: IIconProps) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={width || "24"} height={height || "24"} viewBox="0 0 24 24" fill="none" stroke={color || "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    )
+}
+
