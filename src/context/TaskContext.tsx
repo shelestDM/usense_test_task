@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 interface ITaskContext {
     tasks: ITask[],
-    onDelateTask: (id:string) => void,
+    onDelateTask: (id: string) => void,
 }
 
 interface ITaskProviderProps {
@@ -52,9 +52,15 @@ const TaskContextProvider = ({ children }: ITaskProviderProps) => {
             isCompleted: false,
             id: '5',
         },
+        {
+            title: 'Calculate a time wich i spend on this testTask',
+            description: 'Now i already spended 46 minutes for this task',
+            isCompleted: false,
+            id: '6',
+        },
     ]);
 
-    const onDelateTask = (taskId:string) => setTasks(prevTasks => prevTasks.filter(({id})=> id !== taskId))
+    const onDelateTask = (taskId: string) => setTasks(prevTasks => prevTasks.filter(({ id }) => id !== taskId))
 
     let value = {
         tasks,
