@@ -19,15 +19,15 @@ export interface ITask {
     description: string,
     isCompleted: boolean,
     fileName?: string;
-    fileContent?: string;
 }
 
 const simpleTasks: ITask[] = [
     {
         title: 'Do a test task',
-        description: 'I need to do a tesk task, because i want to have the job',
+        description: 'I need to complete a test task because I want to get the job.',
         isCompleted: false,
-        id: '1'
+        id: '1',
+        fileName: 'fileddddadasdasdasdadv3rybuinf2kskdaksdgmdfkgmfg.txt'
     },
     {
         title: 'Create a Context',
@@ -54,8 +54,8 @@ const simpleTasks: ITask[] = [
         id: '5',
     },
     {
-        title: 'Calculate a time wich i spend on this testTask',
-        description: 'Now i already spended 4 hours 35 minutes for this task (some large text to check how it will display)',
+        title: "Calculate the time I've spent on this test task",
+        description: "I've already spent 4 hours and 35 minutes on it so far.",
         isCompleted: true,
         id: '6',
     },
@@ -67,14 +67,22 @@ const TaskContextProvider = ({ children }: ITaskProviderProps) => {
 
     const [tasks, setTasks] = useState<ITask[]>(simpleTasks);
 
-    const onDeleteTask = (taskId: string) => setTasks(prevTasks => prevTasks.filter(({ id }) => id !== taskId))
+    const onDeleteTask = (taskId: string) => {
+        setTasks(prevTasks => prevTasks.filter(({ id }) => id !== taskId));
+    }
 
-    const onAddNewTask = (newTask: ITask) => setTasks(prevTasks => [newTask, ...prevTasks])
+    const onAddNewTask = (newTask: ITask) => {
+        setTasks(prevTasks => [newTask, ...prevTasks]);
+    }
 
-    const onUpdateTasksAfterEditing = (editedTask: ITask) => setTasks(prevTasks => prevTasks.map((task) => task.id === editedTask.id ? editedTask : task));
+    const onUpdateTasksAfterEditing = (editedTask: ITask) => {
+        setTasks(prevTasks => prevTasks.map((task) => task.id === editedTask.id ? editedTask : task));
+    }
 
     const [taskToEdit, setTaskToEdit] = useState<ITask | undefined>(undefined);
-    const onGetTaskToEdit = (taskId: string | undefined) => setTaskToEdit(tasks.find(({ id }) => id === taskId));
+    const onGetTaskToEdit = (taskId: string | undefined) => {
+        setTaskToEdit(tasks.find(({ id }) => id === taskId));
+    }
 
     let value = {
         tasks,

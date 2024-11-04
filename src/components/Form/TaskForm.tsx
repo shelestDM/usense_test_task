@@ -32,8 +32,6 @@ export default function TaskForm({
     }
 
     const [fileName, setFileName] = useState<string>('Add a file');
-    const [fileContent, setFileContent] = useState<string>('');
-
 
     useEffect(() => {
         if (taskToEdit) {
@@ -42,14 +40,12 @@ export default function TaskForm({
                 description: editTaskDescription,
                 isCompleted: editTaskIsCompleted,
                 fileName: editTaskFileName,
-                fileContent: editTaskFileConent
             } = taskToEdit;
 
             setIsNewTaskDone(editTaskIsCompleted);
             setTaskTitle(editTaskTitle);
             setTaskDescription(editTaskDescription);
             setFileName(editTaskFileName || 'Add a file');
-            setFileContent(editTaskFileConent || '')
         }
     }, [taskToEdit])
 
@@ -60,12 +56,11 @@ export default function TaskForm({
         if (file) {
             const reader = new FileReader();
             reader.onload = () => {
-                const content = reader.result as string;
-                setFileContent(content);
                 setFileName(file.name);
             };
             reader.readAsText(file);
         }
+        event.target.value = '';
     };
 
     const {
@@ -84,7 +79,7 @@ export default function TaskForm({
 
             cleanStates();
             if (taskToEdit) onGetTaskToEdit(undefined);
-            
+
         } else {
             setIsTipVisible(true);
         }
@@ -97,8 +92,7 @@ export default function TaskForm({
             title: taskTitle,
             description: taskDescription,
             isCompleted: isNewTaskDone,
-            fileName,
-            fileContent
+            fileName: fileName !== 'Add a file' ? fileName : '',
         })
     }
 
@@ -155,7 +149,7 @@ export default function TaskForm({
                     </div>
                     <label
                         htmlFor="file-upload"
-                        className="cursor-pointer shadow-md py-1 px-4 rounded-md w-3/4"
+                        className="cursor-pointer shadow-md py-1 px-4 rounded-md w-3/4 truncate"
                     >
                         <span id="file-name" className="text-[13px]">{fileName}</span>
                         <input

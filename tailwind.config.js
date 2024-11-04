@@ -8,6 +8,11 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      's': '390px',
+      'md': '640px',
+      'lg': '1024px',
+    },
     extend: {
       animation: {
         smoothAppearFromBottom: "smooth_appear_from_bottom 1s 1 ease-in-out forwards",

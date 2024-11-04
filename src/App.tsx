@@ -23,7 +23,7 @@ export default function App() {
   const onRemoveTaskToEdit = () => setTaskToEdit(undefined);
 
   return (
-    <div className="py-10">
+    <div className="pt-10 pb-20">
       {
         tasks.length
           ? 
@@ -46,7 +46,7 @@ export default function App() {
         iconHeight={20}
         iconWidth={20}
         iconColor="black"
-        className="fixed bottom-[9%] right-[50px] p-3 shadow-xl"
+        className="fixed bottom-[20px] right-[30px] p-3 shadow-xl hover:scale-110 active:scale-90 bg-white"
       />
     </div>
   )

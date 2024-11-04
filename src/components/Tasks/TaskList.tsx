@@ -22,18 +22,20 @@ export const TaskList: React.FC<ITaskListProps> = React.memo(({
     }
 
     return (
-        <ul className="w-full max-w-sm mx-auto flex flex-col gap-5 lg:gap-10 items-center justyfy-center">
+        <ul className="w-full max-w-[300px] s:max-w-[370px] md:max-w-sm mx-auto flex flex-col gap-5 lg:gap-10 items-center justyfy-center">
             {
                 tasksList.map(({
                     title,
                     isCompleted,
                     description,
-                    id
+                    id,
+                    fileName
                 }) =>
                     <li key={id} className="w-full">
                         <Task
                             taskId={id}
                             taskTitle={title}
+                            fileName={fileName}
                             taskDesription={description}
                             isTaskCompleted={isCompleted}
                             onDeleteTask={onDeleteTask}
