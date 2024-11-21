@@ -26,4 +26,4 @@ This app was developed like test task for `Usense` company
 
 ###### About developer
 
-If u have some question, find me in telegram `@shelest_dm`
+If you have any questions, feel free to contact me on Telegram at @shelest_dm.
