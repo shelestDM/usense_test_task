@@ -15,12 +15,12 @@ module.exports = {
     },
     extend: {
       animation: {
-        smoothAppearFromBottom: "smooth_appear_from_bottom 1s 1 ease-in-out forwards",
+        smoothAppear: "smooth_appear 750ms 1 ease-in-out forwards",
       },
       keyframes: {
-        smooth_appear_from_bottom: {
-          "0%": { opacity: 0, transform: 'translateY(-75px)' },
-          "100%": { opacity: 1, transform: 'translateY(0px)' },
+        smooth_appear: {
+          "0%": { opacity: 0, },
+          "100%": { opacity: 1, },
         },
       },
     }
