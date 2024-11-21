@@ -7,7 +7,7 @@ You can see the working version at `https://usensetesttask.web.app`.
 Or you can download the repository using the command
 ### `git clone https://github.com/shelestDM/usense_test_task` 
 
-Then update the parcets with the command
+Then update the dependencies with the command
 
 ### `npm i`
 
