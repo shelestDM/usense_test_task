@@ -27,7 +27,7 @@ const PasswordStrengthMood = React.memo(({ passwordStrength }: { passwordStrengt
         },
         'short': {
             icon: '',
-            title: 'Password shuold be at least 8 characters'
+            title: 'Password should be at least 8 characters'
         },
         'empty': {
             icon: '',
